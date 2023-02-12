@@ -1,0 +1,35 @@
+section#consult
+    gap: 1em
+    display: flex
+    flex-wrap: wrap
+    padding: 0 0 10em
+    justify-content: center
+    grid-template-columns: repeat(2, 1fr)
+    background: var(--black) url('../../assets/images/consult.svg') no-repeat top
+    background-size: cover
+
+    &>*
+        gap: 2em
+        display: flex
+        flex: 1 24em
+        align-items: center
+        flex-direction: column
+        justify-content: center
+
+        form
+            padding: 3em
+            background: red
+            border-radius: 1em
+            background: var(--light-pale)
+
+            input, select, textarea
+                padding-left: 1em
+                border-color: var(--gray-white)
+
+    .aside
+        padding: 0 max(5%, 3em)
+
+        h2
+            text-align: left
+            font-size: max(5vw, 2em)
+            text-transform: capitalize

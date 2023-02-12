@@ -1,0 +1,28 @@
+footer
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+    background: var(--pale) url('../../assets/images/consult.svg') no-repeat bottom
+    background-size: cover
+
+    &::before
+        top: 0
+        left: 50%
+        width: 90%
+        content: ''
+        height: 0.15em
+        position: absolute
+        background: var(--white)
+        transform: translateX(-50%)
+
+    .flex
+        gap: .5em
+        flex: 0 20em
+        display: flex
+
+        img
+            height: 1.5em
+
+        & > :not(img)
+            font-size: .9em
+            text-transform: capitalize

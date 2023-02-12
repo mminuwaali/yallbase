@@ -1,0 +1,90 @@
+/* css variables go here. */
+/* Setting the css variables. */
+@font-face {
+    font-family: 'satoshi';
+    src: url('./assets/fonts/satoshi/Satoshi-Variable.ttf');
+}
+:root {
+    --pale: #121B27;
+    --blue: #5404FF;
+    --black: #000000;
+    --white: #ffffff;
+    --purple: #BA2AD1;
+    --dark-blue: #001D6E;
+    --light-pale: #1D2939;
+    --gray-white: #fcfcfc;
+    --light-black: #1e1e1e;
+    --dark-purple: #A75FD2;
+}
+
+/* general styleing, reseting margin and padding and setting the max with to be windows viewport width */
+* {
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    color: var(--white);
+    box-sizing: border-box;
+    font-family: 'satoshi';
+}
+
+/* setting the body's with and height */
+body {
+    width: 100%;
+    height: 100vh;
+    background: var(--pale);
+
+    & :is(#root, #portal) {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+    }
+}
+
+/* setting the root tag to a flex */
+#root {
+    gap: 2em;
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    // background: url('./assets/images/body-bg.svg') no-repeat top;
+    // background-size: 100% auto;
+
+    main,
+    footer,
+    header {
+        gap: 2em;
+        width: 100%;
+        display: flex;
+        padding: 1em 8%;
+        position: relative;
+    }
+
+    section {
+        position: relative;
+    }
+
+    main {
+        flex: 1 0 auto;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+/* setting up the portal tag to only show if there is a child tag. */
+#portal {
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    position: fixed;
+    overflow: hidden;
+    transition: 400ms;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(.2em);
+    background: rgba(0 0 0 / .2);
+
+    &:empty {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
